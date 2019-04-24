@@ -145,6 +145,11 @@ export default class App extends Component {
             Made with <a href="https://reactjs.org/">React</a> and 💙
           </p>
         </footer>
+        <p className="Disclaimer">
+          <a href="https://github.com/Pranit-Harekar/unpair-econduit-terminal#disclaimer">
+            Disclaimer
+          </a>
+        </p>
       </div>
     );
   }

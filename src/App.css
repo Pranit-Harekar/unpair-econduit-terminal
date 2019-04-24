@@ -22,4 +22,10 @@
   .App footer p {
     font-size: 13px;
   }
+
+  .Disclaimer {
+    text-align: end;
+    padding-right: 30px;
+    font-size: 13px;
+  }
 }
