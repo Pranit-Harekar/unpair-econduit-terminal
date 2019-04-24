@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Button, Container, Form, Navbar } from "react-bootstrap";
+import { Button, Container, Form, Modal, Navbar } from "react-bootstrap";
 import "./App.css";
+import { unpairTerminal, validateResponse } from "./unpairTerminal";
 
 export default class App extends Component {
   constructor(props) {
@@ -9,7 +10,10 @@ export default class App extends Component {
     this.state = {
       terminalid: "",
       key: "",
-      password: ""
+      password: "",
+      showModal: false,
+      isSuccess: false,
+      result: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -38,8 +42,34 @@ export default class App extends Component {
     });
   };
 
-  handleSubmit = event => {
+  handleSubmit = async event => {
     event.preventDefault();
+    try {
+      const response = await unpairTerminal(
+        this.state.terminalid,
+        this.state.key,
+        this.state.password
+      );
+      validateResponse(response);
+
+      if (response.Status === "Success") {
+        this.setState({ showModal: true, isSuccess: true, result: "Success" });
+      }
+
+      if (response.Status === "Error") {
+        this.setState({
+          showModal: true,
+          isSuccess: false,
+          result: response.ErrorMessage
+        });
+      }
+    } catch (e) {
+      this.setState({
+        showModal: true,
+        isSuccess: false,
+        result: e.message
+      });
+    }
   };
 
   render() {
@@ -54,6 +84,10 @@ export default class App extends Component {
               <Navbar.Text>
                 <a href="https://github.com/Pranit-Harekar/unpair-econduit-terminal">
                   Github
+                </a>
+                |
+                <a href="https://econduit.cloud/docs/api/unpairterminal/">
+                  API Reference
                 </a>
               </Navbar.Text>
             </Container>
@@ -89,7 +123,28 @@ export default class App extends Component {
           <Button block size="lg" disabled={!this.validateForm()} type="submit">
             Unpair
           </Button>
+          <Modal
+            size="sm"
+            show={this.state.showModal}
+            onHide={() => this.setState({ showModal: false })}
+            aria-labelledby="example-modal-sizes-title-sm"
+          >
+            <Modal.Header closeButton>
+              <Modal.Title id="example-modal-sizes-title-sm">
+                {this.state.isSuccess
+                  ? "Unpaired successfully"
+                  : "Failed to unpair"}
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>{this.state.result}</Modal.Body>
+          </Modal>
         </Form>
+
+        <footer>
+          <p>
+            Made with <a href="https://reactjs.org/">React</a> and 💙
+          </p>
+        </footer>
       </div>
     );
   }
