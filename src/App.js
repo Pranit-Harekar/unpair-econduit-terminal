@@ -26,19 +26,19 @@ export default class App extends Component {
 
   handleTerminalIdChange = event => {
     this.setState({
-      terminalid: event.target.value
+      terminalid: event.target.value.trim()
     });
   };
 
   handleKeyChange = event => {
     this.setState({
-      key: event.target.value
+      key: event.target.value.trim()
     });
   };
 
   handlePasswordChange = event => {
     this.setState({
-      password: event.target.value
+      password: event.target.value.trim()
     });
   };
 
@@ -82,11 +82,19 @@ export default class App extends Component {
                 <h5>Unpair eConduit Terminal</h5>
               </Navbar.Brand>
               <Navbar.Text>
-                <a href="https://github.com/Pranit-Harekar/unpair-econduit-terminal">
+                <a
+                  href="https://github.com/Pranit-Harekar/unpair-econduit-terminal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Github
                 </a>
                 |
-                <a href="https://econduit.cloud/docs/api/unpairterminal/">
+                <a
+                  href="https://econduit.cloud/docs/api/unpairterminal/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   API Reference
                 </a>
               </Navbar.Text>
@@ -99,7 +107,7 @@ export default class App extends Component {
             <Form.Label>Terminal ID</Form.Label>
             <Form.Control
               autoFocus
-              type="text"
+              type="number"
               value={this.state.terminalid}
               onChange={this.handleTerminalIdChange}
             />
@@ -142,11 +150,23 @@ export default class App extends Component {
 
         <footer>
           <p>
-            Made with <a href="https://reactjs.org/">React</a> and 💙
+            Made with{" "}
+            <a
+              href="https://reactjs.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              React
+            </a>{" "}
+            and 💙
           </p>
         </footer>
         <p className="Disclaimer">
-          <a href="https://github.com/Pranit-Harekar/unpair-econduit-terminal#disclaimer">
+          <a
+            href="https://github.com/Pranit-Harekar/unpair-econduit-terminal#disclaimer"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Disclaimer
           </a>
         </p>
