@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, Container, Form, Modal, Navbar } from "react-bootstrap";
 import "./App.css";
+import logo from "./logo.svg";
 import { unpairTerminal, validateResponse } from "./unpairTerminal";
 
 export default class App extends Component {
@@ -79,13 +80,21 @@ export default class App extends Component {
           <Navbar expand="lg" variant="light" bg="light">
             <Container>
               <Navbar.Brand href="/">
-                <h5>Unpair eConduit Terminal</h5>
+                <img
+                  src={logo}
+                  width="30"
+                  height="30"
+                  className="d-inline-block align-top App-logo"
+                  alt="Unpair eConduit Terminal"
+                />
+                {" Unpair eConduit Terminal"}
               </Navbar.Brand>
               <Navbar.Text>
                 <a
                   href="https://github.com/Pranit-Harekar/unpair-econduit-terminal"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="NavLink"
                 >
                   Github
                 </a>
@@ -94,6 +103,7 @@ export default class App extends Component {
                   href="https://econduit.cloud/docs/api/unpairterminal/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="NavLink"
                 >
                   API Reference
                 </a>
