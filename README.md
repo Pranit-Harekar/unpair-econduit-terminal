@@ -4,13 +4,15 @@ A simple UI app for unpairing econduit terminals
 
 ### Quickstart
 
-To test locally run,
+- To test locally run,
 
-```
-$ yarn start
-```
+  ```
+  $ yarn start
+  ```
 
-View application on [http://localhost:3000](http://localhost:3000)
+  View application on [http://localhost:3000](http://localhost:3000)
+
+* To view production version, go to https://unpair-econduit-terminal.herokuapp.com
 
 ### Reference
 
