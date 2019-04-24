@@ -18,4 +18,4 @@ https://econduit.cloud/docs/api/unpairterminal/
 
 ### Disclaimer
 
-This app is not endorsed by, directly affiliated with, maintained, authorized, or sponsored by [eConduit](https://econduit.cloud/). This is an application built on top of open source eConduit REST APIs.
+This app is not endorsed by, directly affiliated with, maintained, authorized, or sponsored by [eConduit](https://econduit.cloud/). This is an application built on top of open source [eConduit REST APIs](https://econduit.cloud/docs/api/).
