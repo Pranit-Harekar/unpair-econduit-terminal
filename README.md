@@ -1,6 +1,6 @@
 ## [unpair-econduit-terminal](https://unpair-econduit-terminal.herokuapp.com/)
 
-A simple UI app for unpairing econduit terminals
+A simple React app for unpairing econduit terminals
 
 ### Quickstart
 
