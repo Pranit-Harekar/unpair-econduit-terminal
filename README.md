@@ -1,4 +1,4 @@
-## [unpair-econduit-terminal](https://unpair-econduit-terminal.herokuapp.com/)
+## [unpair-econduit-terminal](https://unpair-econduit-terminal.now.sh)
 
 A simple React app for unpairing econduit terminals
 
