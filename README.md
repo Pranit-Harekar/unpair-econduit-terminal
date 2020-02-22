@@ -12,7 +12,7 @@ A simple React app for unpairing econduit terminals
 
   View application on [http://localhost:3000](http://localhost:3000)
 
-* To view production version, go to https://unpair-econduit-terminal.herokuapp.com
+* To view production version, go to https://unpair-econduit-terminal.now.sh
 
 ### Reference
 
